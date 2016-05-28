@@ -1,7 +1,10 @@
 """ This module provides a class that implements the HSAdmin API.
 """
 
-from xmlrpclib import ServerProxy
+try:
+    from xmlrpclib import ServerProxy
+except ImportError:
+    from xmlrpc.client import ServerProxy
 
 from .dispatcher import Dispatcher
 from .session import Session
@@ -30,7 +33,7 @@ class API(object):
                 modules[module] = backend
                 meta[backend][module] = dict()
                 for prop in [prop for prop in props
-                             if prop.has_key('module') and (prop['module'] == module)]:
+                             if ('module' in prop) and (prop['module'] == module)]:
                     del prop['module']
                     meta[backend][module][prop['name']] = prop
 

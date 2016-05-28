@@ -1,8 +1,12 @@
 """ This module provides a directly callable class that implements a remote method invokation.
 """
 
-from xmlrpclib import ServerProxy
-from xmlrpclib import Fault
+try:
+    from xmlrpclib import ServerProxy
+    from xmlrpclib import Fault
+except ImportError:
+    from xmlrpc.client import ServerProxy
+    from xmlrpc.client import Fault
 
 from .exceptions import ProxyError
 
