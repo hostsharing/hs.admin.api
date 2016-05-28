@@ -6,3 +6,13 @@ Changelog
 
 - Initial release. 
   [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
+
+
+0.2
+---
+
+- Achieve Python 2/3 compatibility.
+  [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
+
+- Add build instructions.
+  [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
