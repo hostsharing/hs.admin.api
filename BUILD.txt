@@ -1,0 +1,13 @@
+Build
+=====
+
+Building Debian Packages requires the follwoing Debian Packages to be installed:
+
+python-all
+python-stdeb
+python3-all
+python3-stdeb
+
+Simply build Debian packages for Python 2 and Python 3:
+
+$ python ./setup.py --command-packages=stdeb.command sdist_dsc --with-python2=True --with-python3=True bdist_deb
