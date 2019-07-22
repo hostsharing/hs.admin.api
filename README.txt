@@ -2,6 +2,7 @@ Introduction
 ============
 
 This package provides a Python implementation of the Hostsharing HSAdmin API.
+PROJEKT IST UMGEZOGEN: https://dev.hostsharing.net/repositories/
 
 Example
 -------
