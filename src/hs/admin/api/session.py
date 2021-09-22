@@ -2,6 +2,7 @@
 """
 
 from requests import delete, post
+from yaml import safe_load
 
 from .exceptions import LoginError, SessionError
 
@@ -33,7 +34,7 @@ class Session(object):
         result = post(self.tgt, data=payload)
         if result.status_code != 200:
             raise SessionError('Acquisition of session ticket failed.')
-        return result.text
+        return safe_load(result.text)
 
 
     def get_user(self):

@@ -4,7 +4,7 @@ Changelog
 0.1
 ---
 
-- Initial release. 
+- Initial release.
   [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
 
 
@@ -15,4 +15,11 @@ Changelog
   [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
 
 - Add build instructions.
+  [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
+
+
+0.3
+---
+
+- Update to recent CAS protocol version.
   [Michael Hierweck <michael.hierweck@hostsharing.net>, Hostsharing eG]
