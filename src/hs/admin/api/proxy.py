@@ -1,5 +1,6 @@
 """ This module provides a directly callable class that implements a remote method invokation.
 """
+import xmlrpc.client
 
 try:
     from xmlrpclib import ServerProxy
@@ -7,9 +8,6 @@ try:
 except ImportError:
     from xmlrpc.client import ServerProxy
     from xmlrpc.client import Fault
-
-from .exceptions import ProxyError
-
 
 
 class Proxy(object):
@@ -20,13 +18,11 @@ class Proxy(object):
         self.session = session
         self.dispatcher = dispatcher
 
-
     def __call__(self, module, method, where=None, set=None):
         backend = self.dispatcher.get_backend(module)
         remote = getattr(ServerProxy(backend), module + '.' + method)
         ticket = self.session.get_ticket()
         user = self.session.get_user()
-
         try:
             if (where is None) and (set is None):
                 result = remote(user, ticket)
@@ -36,8 +32,6 @@ class Proxy(object):
                 result = remote(user, ticket, where)
             else:
                 result = remote(user, ticket, set, where)
-
-        except Fault as fault:
-            raise ProxyError(fault.faultString)
-
+        except xmlrpc.client.Fault as e:
+            raise Exception('HS Error' + e.faultString)
         return result

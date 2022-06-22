@@ -15,8 +15,8 @@ class Module(object):
 
         self.methods = dict()
         for method in methods:
-            self.methods[name] = Method(proxy, self, method)
-            setattr(self, method, self.methods[name])
+            self.methods[method] = Method(proxy, self, method)
+            setattr(self, method, self.methods[method])
 
 
     def list_methods(self):

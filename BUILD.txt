@@ -18,7 +18,7 @@ $ python ./setup.py --command-packages=stdeb.command bdist_deb
 
 
 Building with Python 3
--------------_--------
+----------------------
 
 Building Debian Packages with Python 3 requires
 the following Debian Packages to be installed:

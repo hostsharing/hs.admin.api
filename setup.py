@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2'
+version = '0.3'
 
 long_description = (
     open('README.txt').read())
@@ -28,6 +28,7 @@ setup(name='hs.admin.api',
       install_requires=[
           'setuptools',
           'requests',
+          'pyyaml',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
